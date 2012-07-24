@@ -1,5 +1,4 @@
-import os, sys, re, yaml
-import bottle
+import os, sys, re, yaml, bottle
 
 app_base = os.path.dirname(os.path.realpath(__file__))
 app_base_join = lambda x: os.path.join(os.sep, app_base, x)

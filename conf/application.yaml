@@ -1,2 +1,8 @@
+environment: dev
 database:
-    dev: 'sqlite:///:memory:'
+    dev: &db_defaults
+        conn_string: 'sqlite:///:memory:'
+    staging: 
+        <<: *db_defaults
+    prod: 
+        <<: *db_defaults

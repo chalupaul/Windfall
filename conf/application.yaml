@@ -1,0 +1,18 @@
+remote_defaults: &defaults
+    storage_format: qcow2
+    auth_info:
+        host: 127.0.0.1
+        port: 9000
+        tenant: admin
+        user: admin
+        password: admin
+
+glances:
+    localhost:
+        <<: *defaults
+    thing1:
+        storage_format: xen
+        <<: *defaults
+    thing2:
+        storage_format: vmdk
+        <<: *defaults

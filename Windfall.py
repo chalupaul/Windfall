@@ -1,4 +1,4 @@
-import os, sys, re, yaml, requests
+import os, sys, re, yaml
 import bottle
 
 app_base = os.path.dirname(os.path.realpath(__file__))

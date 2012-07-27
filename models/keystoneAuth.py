@@ -14,13 +14,13 @@ class KeystoneAuth(AuthBase):
         if token=="":
                 
             try:
-                    
-                tenant = "MyTenant"
-                username = "myuser"
-                password = "mypassword"
+
+                tenant = ""
+                username = ""
+                password = ""
                 
-                ip = "198.101.225.234"
-                port = "35357"
+                ip = ""
+                port = ""
                 
                 url = "http://" + ip + ":" + port + "/v2.0/tokens"
                 payload = ' {"auth":{"tenantName": "' + tenant + '", "passwordCredentials":{"username": "' + username + '", "password":"' + password + '"} }} '

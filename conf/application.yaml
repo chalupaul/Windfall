@@ -1,7 +1,7 @@
 environment: dev
 database:
     dev: &db_defaults
-        conn_string: 'sqlite:///:memory:'
+        conn_string: 'sqlite:///testdb.db'
     staging: 
         <<: *db_defaults
     prod: 

@@ -10,10 +10,10 @@ configs = yaml.load(open(app_base_join('conf' + os.sep + "application.yaml")))
 engine = create_engine(configs['database'][configs['environment']]\
                            ['conn_string'], echo=True)
 
-if configs['environment'] is 'dev':
-    Base = declarative_base().metadata.create_all(engine)
-
-plugin = sqlalchemy.Plugin(engine, create=True)
+Base = declarative_base()
+plugin = sqlalchemy.Plugin(engine, Base.metadata, create=True)
+app = bottle.default_app()
+app.install(plugin)
 
 bottle.TEMPLATE_PATH.append(app_base_join('views'))
 
@@ -27,9 +27,13 @@ control_dirs = ['controllers', 'errors', 'models']
  for file in os.listdir(app_base_join(cdir))
    if re.match('.*_' + cdir[:-1] + '.py$', file)]
 
+if configs['environment'] is 'dev':
+    Base.metadata.create_all(engine)
+    
+    
 if __name__ == '__main__':
     bottle.debug(True)
     bottle.run(reloader=True)
+else:
+    bottle.run()
 
-application = bottle.default_app()
-application.install(plugin)

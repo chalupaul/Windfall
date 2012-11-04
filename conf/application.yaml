@@ -1,7 +1,13 @@
 environment: dev
+api_server:
+    dev:
+        host: '127.0.0.1'
+        port: '8080'
+        
 database:
     dev: &db_defaults
         conn_string: 'sqlite:///testdb.db'
+        
     staging: 
         <<: *db_defaults
     prod: 

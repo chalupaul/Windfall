@@ -1,9 +1,5 @@
 from bottle import request, route, view, get, post
 
-@route('/test')
-@view('test/test')
-def test():
-    return {"name": "Paul"}
 
 @get('/test')
 @view('test/test')

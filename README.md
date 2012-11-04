@@ -11,7 +11,7 @@ python Windfall.py
 
 
 
-NGINX + uWSGI + Bottle
+NGINX + uWSGI + Windfall (Bottle)
 =========
 To run behind nginx with uwsgi (as a daemon http server):
 http://kjuly.me/note/nginx-uwsgi-bottle/

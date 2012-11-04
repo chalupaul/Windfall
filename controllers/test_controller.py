@@ -1,10 +1,9 @@
 from bottle import request, route, view, get, post
 
-
-@get('/test')
+@route('/test')
 @view('test/test')
-def testget():
-    return {"name": "John"}
+def test():
+    return {"name": "Paul"}
 
 @get('/auth')
 def authget(db):
@@ -21,10 +20,3 @@ def auth(db):
             return "Key accepted"
     else:
         return "Key denied"
-    
-
-    
-
-
-
-

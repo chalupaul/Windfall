@@ -1,7 +1,5 @@
 from bottle.ext import sqlalchemy
-from sqlalchemy import Column, Integer, String, UniqueConstraint, Text, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, Text, Boolean, DateTime, asc, desc
 from globals import Base
 import json
 
@@ -16,6 +14,4 @@ class Test(Base):
     
     def __init__(self, name):
         self.name = name
-        
     
-        

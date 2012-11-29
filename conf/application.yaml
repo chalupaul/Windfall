@@ -7,7 +7,7 @@ api_server:
 database:
     dev: &db_defaults
         conn_string: 'sqlite:///testdb.db'
-        
+        #conn_string: 'mysql://test:test@localhost/testdb'
     staging: 
         <<: *db_defaults
     prod: 
